@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: scaletest-service
+  labels:
+    monitoring: "enabled"
+spec:
+  selector:
+    app: scaletest
+  ports:
+  - port: 8080
+    targetPort: 8080
+    name: http-metrics
+  type: ClusterIP
